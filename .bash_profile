@@ -14,7 +14,7 @@ export DYLD_LIBRARY_PATH="/usr/local/mysql/lib/"
 export VERSIONER_PYTHON_PREFER_64_BIT=yes
 export VERSIONER_PYTHON_PREFER_32_BIT=no
 
-export NVM_DIR="/Users/{{ USERNAME }}/.nvm"
+export NVM_DIR="/Users/## USERNAME ##/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 

@@ -1,4 +1,10 @@
 "--------------------------------------------------
+" This is for GNOME 256 colors
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+"--------------------------------------------------
 " NeoBundle Init
 
 " Turn off filetype plugins before bundles init
@@ -24,7 +30,7 @@ if has('vim_starting')
     set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand($HOME.'/.vim/bundle/'))
+" call neobundle#rc(expand($HOME.'/.vim/bundle/'))
 
 " Determine make or gmake will be used for making additional deps for Bundles
 let g:make = 'gmake'
@@ -34,6 +40,8 @@ endif
 
 "--------------------------------------------------
 " Bundles
+ " Required:
+ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoNeoBundle manage NeoNeoBundle
 NeoBundle 'Shougo/neobundle.vim'
@@ -194,6 +202,11 @@ NeoBundle 'kchmck/vim-coffee-script'
 
 " Swig Syntax
 NeoBundle 'brettof86/vim-swigjs'
+
+
+" Call Neo bundle end (Bundle calls are between start and end)
+" this is how it is now
+call neobundle#end()
 
 " Installing bundles for the first time
 if iCanHazNeoBundle == 0
@@ -842,5 +855,3 @@ function! JumpToSASSDefinition()
 endfunction
 " Now map it to f9
 nnoremap <F9> :call JumpToSASSDefinition()<CR>
-
-
